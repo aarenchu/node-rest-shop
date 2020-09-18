@@ -3,11 +3,14 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const redis = require('redis');
 
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 
-// Existing middleware funcs
+const client = redis.createClient(); // TODO: need a server
+
+// Express middleware
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json()); // makes it easier to read.
