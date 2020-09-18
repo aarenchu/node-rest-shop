@@ -8,8 +8,13 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
+    const order ={
+        productId: req.body.productId,
+        quantity: req.body.quantity
+    };
     res.status(201).json({
-        message: 'Orders were created'
+        message: 'Orders were created',
+        order: order
     });
 });
 
@@ -17,13 +22,14 @@ router.post('/', (req, res, next) => {
 router.get('/:orderID', (req, res, next) => {
     res.status(200).json({
         message: 'Order details',
-        orderId: req.params.orderId
+        orderID: req.params.orderID
     });
 });
 
 router.delete('/:orderID', (req, res, next) => {
-    res.status(200),json({
-        message: 'Order deleted'
+    res.status(200).json({
+        message: 'Order deleted',
+        orderID: req.params.orderID
     });
 });
 

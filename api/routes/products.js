@@ -8,17 +8,22 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
+    const product ={
+        name: req.body.name,
+        price:req.body.price
+    };
     // Status 201 = object created succesfully
     res.status(201).json({
-        message: 'Handling POST requests to /products'
+        message: 'Handling POST requests to /products',
+        createdProduct: product
     });
 });
 
 // express uses :, similar to Flask and {id}
 router.get('/:productID', (req, res, next) => {
     // to extract the id
-    const id = req.params.productId;
-
+    const id = req.params.productID;
+    console.log(id);
     if (id === 'special'){
         res.status(200).json({
             message: 'You discovered the special ID',
