@@ -1,0 +1,15 @@
+/*
+User
+email
+pw
+order history
+
+
+Stored as: HMSET user:[user_id] email [user-email] pw [user-pw]
+           HSET users [user-email] [user_id]
+
+Order history:
+        ZADD order-history:[user_id] [order_id] [date-bought]
+        (HSET order:[order_id] date [date-bought])
+
+*/

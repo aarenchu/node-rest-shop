@@ -8,7 +8,11 @@ const redis = require('redis');
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 
-const client = redis.createClient(); // TODO: need a server
+// connect the client side of Redis
+const client = redis.createClient(); // TODO: need a public server
+client.on("error", (error) => {
+    console.error(error);
+});
 
 // Express middleware
 app.use(morgan('dev'));

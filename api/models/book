@@ -1,0 +1,8 @@
+/*
+Book (a.k.a product for simplicity)
+title
+price
+
+
+Stored as: HMSET book:[book_id] title [book-title] price [book-price]
+*/
