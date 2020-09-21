@@ -3,16 +3,9 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const redis = require('redis');
 
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
-
-// connect the client side of Redis
-const client = redis.createClient(); // TODO: need a public server
-client.on("error", (error) => {
-    console.error(error);
-});
 
 // Express middleware
 app.use(morgan('dev'));
