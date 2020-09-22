@@ -111,6 +111,7 @@ router.patch('/:productID', (req, res, next) => {
             client.hset("books", id, ops.value);
         }
         // TODO: check propName is valid
+        // TODO: check for multiple properties
     }
 });
 
