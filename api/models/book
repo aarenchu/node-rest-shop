@@ -1,0 +1,23 @@
+/*
+Book (a.k.a product for simplicity)
+title
+price
+
+
+Stored as: HMSET book:[book_id] title [book-title] price [book-price]
+           HSET books [book_id] [book-title]
+*/
+
+/* S/N: Schemas and Models are a Mongoose thing, Schema defines a structure, Model is like the Class,
+ which instances are made when using the db.
+
+const mongoose = require('mongoose');
+
+const productSchema = mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
+    name: String,
+    price: Number
+});
+
+module.exports = mongoose.model('Product', productSchema);
+*/

@@ -1,0 +1,15 @@
+/*
+Order (Aka Book Order in UML)
+book (1 for simplicity)
+quantity
+date
+total
+
+
+Stored as: HMSET order:[order_id] book [book-id] quantity [some int]
+date is added when order is placed.
+total is received as follows:
+    1. var price = hget book:[book_id] price
+    2. total-price = price * quantity
+    3. hset order:[order_id] total [total-price]
+*/
